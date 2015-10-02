@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar sendgrid-playground-rest-service/target/sendgrid-playground-rest-service-0.0.1-SNAPSHOT.jar
