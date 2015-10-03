@@ -40,7 +40,6 @@ public class SendGridEvent {
     public String url;
     @JsonProperty("asm_group_id")
     public Integer asmGroupId;
-
     public String getSgMessageId() {
         return sgMessageId;
     }
@@ -103,6 +102,20 @@ public class SendGridEvent {
 
     public void setAsmGroupId(Integer asmGroupId) {
         this.asmGroupId = asmGroupId;
+    }
+
+    @Override
+    public String toString() {
+        return new org.apache.commons.lang3.builder.ToStringBuilder(this)
+                .append("sgMessageId", sgMessageId)
+                .append("email", email)
+                .append("timestamp", timestamp)
+                .append("smtpId", smtpId)
+                .append("event", event)
+                .append("category", category)
+                .append("url", url)
+                .append("asmGroupId", asmGroupId)
+                .toString();
     }
 
 }
