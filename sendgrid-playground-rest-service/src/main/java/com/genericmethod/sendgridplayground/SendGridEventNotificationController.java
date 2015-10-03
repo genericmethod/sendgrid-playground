@@ -27,7 +27,7 @@ public class SendGridEventNotificationController {
     }
 
     @RequestMapping(name = "/events", method = RequestMethod.POST, consumes ="application/json")
-    public ResponseEntity<String> event(@RequestBody List<String> sendGridEventNotification){
+    public ResponseEntity<String> event(@RequestBody List<SendGridEvent> sendGridEventNotification){
         log.info("Event received");
         return new ResponseEntity<>("OK - "+ sendGridEventNotification, HttpStatus.OK);
     }
