@@ -20,8 +20,8 @@ public class SendGridEventNotificationController {
     }
 
     @RequestMapping(name = "/events", method = RequestMethod.POST)
-    public ResponseEntity<String> event(@RequestBody List<String> sendGridEventNotification){
-        return new ResponseEntity<>("OK", HttpStatus.OK);
+    public ResponseEntity<String> event(@RequestBody String[] sendGridEventNotification){
+        return new ResponseEntity<>("OK - "+ sendGridEventNotification.toString(), HttpStatus.OK);
     }
 
 }
