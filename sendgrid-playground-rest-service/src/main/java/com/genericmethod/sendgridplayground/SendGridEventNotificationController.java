@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ public class SendGridEventNotificationController {
     }
 
     @RequestMapping(name = "/events", method = RequestMethod.POST)
-    public ResponseEntity<String> event(@RequestBody String[] sendGridEventNotification){
+    public ResponseEntity<String> event(@RequestBody ArrayList<String[]> sendGridEventNotification){
         log.info("Event received");
         return new ResponseEntity<>("OK - "+ sendGridEventNotification, HttpStatus.OK);
     }
