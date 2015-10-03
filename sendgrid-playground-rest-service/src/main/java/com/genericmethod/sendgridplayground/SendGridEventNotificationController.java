@@ -20,7 +20,7 @@ public class SendGridEventNotificationController {
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<String> exception(HttpServletRequest req, Exception e){
-        log.info("Exception thrown");
+        log.info("Error - " + e.getMessage());
         return new ResponseEntity<>("NOT OK - "+e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
